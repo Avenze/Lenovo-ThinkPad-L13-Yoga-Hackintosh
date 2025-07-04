@@ -405,6 +405,33 @@ When updating MacOS the following is recommended:
 
 </details>
 
+<details>
+<summary><strong>Stuck on "Less than a minute remaining..." (OFFLINE INSTALL)</strong></summary>
+
+Usually when installing (in my particular case, MacOS Sequoia 15.5), it might get stuck at "Less than a minute remaining..."
+
+This is completely normal, and would be expected as the system is performing some heavy cryptography.
+
+Try pressing the Caps Lock key, if the light turns on, the system isn't fully frozen, just busy.
+
+> https://dortania.github.io/OpenCore-Legacy-Patcher/TROUBLESHOOTING.html#stuck-on-less-than-a-minute-remaining
+> See the above link to see the source for this information.
+
+</details>
+
+<details>
+<summary><strong>Infinite boot loop on the install process (OFFLINE INSTALL)</strong></summary>
+
+I've experienced some issues when installing MacOS Sequoia 15.5 with OpenCore, where the install completely finishes the first stage,
+but then restarts to the second install screen. At this point, you might get through the ~30 minutes remaining counter,
+but once at the end, it restarts to return at the ~30 minutes remaining counter.
+
+I mitigated this issue by simply formatting the EFI partition to MS-DOS FAT within the MacOS Disk Utility from a VM,
+and then mounting it on my Windows PC, as creating the EFI partition on MacOS, (for me at least), left unnessecary files
+in the EFI folder.
+
+</details>
+
 ## Status
 
 
